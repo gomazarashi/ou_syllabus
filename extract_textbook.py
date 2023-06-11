@@ -1,9 +1,6 @@
 from ou_syllabus import SyllabusData
 from bs4 import BeautifulSoup as bs4
 
-course_number = "2023098452"  # 講義番号
-syllabus_data = SyllabusData()
-syllabus_data.scrape_syllabus(course_number)
 
 with open('my_class.html', encoding='utf-8') as f:
     html = f.read()
