@@ -1,21 +1,6 @@
 import requests
 from bs4 import BeautifulSoup as bs4
 import time  # サーバーへの負荷を考慮して1秒待機するためにインポート
-"""
-# 教科書情報を格納するリストを定義
-textbook_list = soup.select("#ctl00_phContents_ucSylContents_CateText_tdTextBooks > table  ")
-# 参考書情報を格納するリストを定義
-reference_list = soup.select("#ctl00_phContents_ucSylContents_cateReference_tdTextBooks>table span")
-"""
-
-# 結果を表示
-"""print("講義名は「{}」です。".format(course_name.text))
-print("教科書情報は以下の通りです。")
-print(textbook_list)
-print("参考書情報は以下の通りです。")
-print((reference_list))
-print(len(reference_list))"""
-
 
 # シラバスデータに関するクラスを定義
 class SyllabusData():
@@ -126,7 +111,8 @@ class SyllabusData():
         self.sdgs_detail = soup.select_one("#ctl00_phContents_ucSylContents_cateSdgs_RefGv").text
         self.professional_faculty = soup.select_one("#ctl00_phContents_ucSylContents_cateExperience_trMain").text
         self.notes = soup.select_one("#ctl00_phContents_ucSylContents_cateNote_lblNormal").text
-        self.lcos = soup.select_one("#ctl00_phContents_ucSylContents_cateLcos_lvRefer_ctrl0_lblname_j").text
+        if soup.select_one("#ctl00_phContents_ucSylContents_cateLcos_lvRefer_ctrl0_lblname_j") != None:
+            self.lcos = soup.select_one("#ctl00_phContents_ucSylContents_cateLcos_lvRefer_ctrl0_lblname_j").text
 
 
 def main():
