@@ -111,7 +111,8 @@ class SyllabusData():
         self.sdgs_detail = soup.select_one("#ctl00_phContents_ucSylContents_cateSdgs_RefGv").text
         self.professional_faculty = soup.select_one("#ctl00_phContents_ucSylContents_cateExperience_trMain").text
         self.notes = soup.select_one("#ctl00_phContents_ucSylContents_cateNote_lblNormal").text
-        self.lcos = soup.select_one("#ctl00_phContents_ucSylContents_cateLcos_lvRefer_ctrl0_lblname_j").text
+        if soup.select_one("#ctl00_phContents_ucSylContents_cateLcos_lvRefer_ctrl0_lblname_j") != None:
+            self.lcos = soup.select_one("#ctl00_phContents_ucSylContents_cateLcos_lvRefer_ctrl0_lblname_j").text
 
 
 def main():
