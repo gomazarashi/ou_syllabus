@@ -1,21 +1,6 @@
 import requests
 from bs4 import BeautifulSoup as bs4
 import time  # サーバーへの負荷を考慮して1秒待機するためにインポート
-"""
-# 教科書情報を格納するリストを定義
-textbook_list = soup.select("#ctl00_phContents_ucSylContents_CateText_tdTextBooks > table  ")
-# 参考書情報を格納するリストを定義
-reference_list = soup.select("#ctl00_phContents_ucSylContents_cateReference_tdTextBooks>table span")
-"""
-
-# 結果を表示
-"""print("講義名は「{}」です。".format(course_name.text))
-print("教科書情報は以下の通りです。")
-print(textbook_list)
-print("参考書情報は以下の通りです。")
-print((reference_list))
-print(len(reference_list))"""
-
 
 # シラバスデータに関するクラスを定義
 class SyllabusData():
