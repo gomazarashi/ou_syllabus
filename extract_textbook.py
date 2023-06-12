@@ -1,3 +1,4 @@
+from getpass import getpass
 from ou_syllabus import SyllabusData
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,7 +11,7 @@ course_number_list = []
 print("入力された情報は履修時間割表の取得にのみ使用され、外部に送信されることはありません。\n")
 
 okadai_id = input("岡大IDを入力してください。\n")
-password = input("パスワードを入力してください。\n")
+password = getpass("パスワードを入力してください。\n")
 
 driver = webdriver.Chrome()
 
