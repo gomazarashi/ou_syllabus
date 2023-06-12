@@ -1,8 +1,10 @@
+from getpass import getpass
 from ou_syllabus import SyllabusData
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+
 
 WEEK_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
@@ -48,7 +50,6 @@ def get_textbook_info(course_number_list):
         print("教科書の備考は「{}」です。".format(syllabus_data.textbook_memo))
         print("------------")
 
-# 各授業の教科書とその備考を取得
 
 
 
