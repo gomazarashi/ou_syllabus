@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print("入力された情報は履修時間割表の取得にのみ使用され、外部に送信されることはありません。\n")
 
     okadai_id = input("岡大IDを入力してください。\n")
-    password = input("パスワードを入力してください。\n")
+    password = getpass("パスワードを入力してください。\n")
 
     driver = webdriver.Chrome()
 
