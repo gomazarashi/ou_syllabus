@@ -1,6 +1,7 @@
 from getpass import getpass
 from ou_syllabus import SyllabusData
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
@@ -60,7 +61,7 @@ if __name__ == "__main__":
     okadai_id = input("岡大IDを入力してください。\n")
     password = getpass("パスワードを入力してください。\n")
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(ChromeDriverManager().install())
 
     course_number_list= get_course_number(driver, okadai_id, password)
     get_textbook_info(course_number_list)
